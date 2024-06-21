@@ -1,67 +1,68 @@
-let dly = 100
-basic.forever(function on_forever() {
-    basic.showLeds(`
+dly = 100
+
+def on_forever():
+    basic.show_leds("""
         # . . . .
         . # . . .
         . . # . .
         . . . # .
         . . . . #
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . # . . .
         . . . . .
         . . # . .
         . . . . .
         . . . # .
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . . # . .
         . . # . .
         . . # . .
         . . # . .
         . . # . .
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . . . # .
         . . . . .
         . . # . .
         . . . . .
         . # . . .
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . . . . #
         . . . # .
         . . # . .
         . # . . .
         # . . . .
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . . . . .
         . . . . #
         . . # . .
         # . . . .
         . . . . .
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . . . . .
         . . . . .
         # # # # #
         . . . . .
         . . . . .
-        `)
+        """)
     basic.pause(dly)
-    basic.showLeds(`
+    basic.show_leds("""
         . . . . .
         # . . . .
         . . # . .
         . . . . #
         . . . . .
-        `)
+        """)
     basic.pause(dly)
-})
+basic.forever(on_forever)
