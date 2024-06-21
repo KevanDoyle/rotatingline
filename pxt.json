@@ -1,5 +1,5 @@
 {
-    "name": "RotatingLineBlockPython",
+    "name": "RotatingLinePython",
     "description": "",
     "dependencies": {
         "core": "*",
