@@ -1,6 +1,5 @@
 dly = 100
-blinks = [
-"""
+blinks = ["""
     # . . . .
     . # . . .
     . . # . .
@@ -29,6 +28,24 @@ blinks = [
     . . # . .
     """
 ]
+
+def light_all():
+    basic.show_leds("""
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        """)
+
+def toggle_x():
+    led.toggle(0, 0)
+    led.toggle(0,4)
+    led.toggle(2,2)
+    led.toggle(4, 0)
+    led.toggle(4, 4)
+    basic.pause(dly)
+
 def on_button_pressed_a():
 '''
     basic.show_leds(blinks[0])
@@ -37,23 +54,26 @@ def on_button_pressed_a():
     basic.pause(dly)
 '''
     basic.clear_screen()
-    led.toggle(0, 0)
-    led.toggle(0,5)
-    led.toggle(5, 0)
-    led.toggle(5, 0)
+    toggle_x()
     basic.pause(dly)
+
 def on_button_pressed_b():
+'''
     basic.show_leds(blinks[2])
     basic.pause(dly)
     basic.show_leds(blinks[3])
     basic.pause(dly)
+'''
+    light_all()    
+    basic.pause(dly)
+
 def just_blink():
     led.toggle(2, 2)
     basic.pause(dly)
-input.on_button_pressed(Button.A, on_button_pressed_a)
-input.on_button_pressed(Button.B, on_button_pressed_b)
 
 def on_forever():
+#    input.on_button_pressed(Button.A, on_button_pressed_a)
+#    input.on_button_pressed(Button.B, on_button_pressed_b)
     just_blink()
 
 basic.forever(on_forever)
