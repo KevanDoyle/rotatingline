@@ -47,24 +47,13 @@ def toggle_x():
     basic.pause(dly)
 
 def on_button_pressed_a():
-'''
-    basic.show_leds(blinks[0])
-    basic.pause(dly)
-    basic.show_leds(blinks[1])
-    basic.pause(dly)
-'''
     basic.clear_screen()
     toggle_x()
     basic.pause(dly)
 
 def on_button_pressed_b():
-'''
-    basic.show_leds(blinks[2])
-    basic.pause(dly)
-    basic.show_leds(blinks[3])
-    basic.pause(dly)
-'''
     light_all()    
+    toggle_x()
     basic.pause(dly)
 
 def just_blink():
@@ -72,8 +61,8 @@ def just_blink():
     basic.pause(dly)
 
 def on_forever():
-#    input.on_button_pressed(Button.A, on_button_pressed_a)
-#    input.on_button_pressed(Button.B, on_button_pressed_b)
+    input.on_button_pressed(Button.A, on_button_pressed_a)
+    input.on_button_pressed(Button.B, on_button_pressed_b)
     just_blink()
 
 basic.forever(on_forever)
