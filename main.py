@@ -36,6 +36,7 @@ def on_button_pressed_a():
     basic.show_leds(blinks[1])
     basic.pause(dly)
 '''
+    basic.clear_screen()
     led.toggle(0, 0)
     led.toggle(0,5)
     led.toggle(5, 0)
