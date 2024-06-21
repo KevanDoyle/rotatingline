@@ -43,21 +43,37 @@ function toggle_x() {
     basic.pause(dly)
 }
 
+function on_button_pressed_a() {
+    basic.clearScreen()
+    toggle_x()
+    basic.pause(dly)
+    toggle_x()
+    basic.pause(dly)
+    basic.clearScreen()
+}
+
+function on_button_pressed_b() {
+    light_all()
+    toggle_x()
+    basic.pause(dly)
+    toggle_x()
+    basic.pause(dly)
+    basic.clearScreen()
+}
+
 function just_blink() {
     led.toggle(2, 2)
     basic.pause(dly)
 }
 
 basic.forever(function on_forever() {
-    input.onButtonPressed(Button.A, function on_button_pressed_a() {
-        basic.clearScreen()
-        toggle_x()
-        basic.pause(dly)
-    })
-    input.onButtonPressed(Button.B, function on_button_pressed_b() {
-        light_all()
-        toggle_x()
-        basic.pause(dly)
-    })
+    input.onButtonPressed(Button.A, on_button_pressed_a)
+    input.onButtonPressed(Button.B, on_button_pressed_b)
     just_blink()
+    while (input.buttonIsPressed(Button.A)) {
+        on_button_pressed_a()
+    }
+    while (input.buttonIsPressed(Button.B)) {
+        on_button_pressed_b()
+    }
 })
